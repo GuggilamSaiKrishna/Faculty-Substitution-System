@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Substitution Result</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Substitution Result</h1>
+
+<p><b>Absent Faculty:</b> {{absent}}</p>
+
+<p><b>Day:</b> {{day}}</p>
+
+<p><b>Period:</b> {{period}}</p>
+
+{% if substitute %}
+<h2 class="success">Substitute Faculty: {{substitute}}</h2>
+{% else %}
+<h2 class="error">No substitute available</h2>
+{% endif %}
+
+<a href="/">Go Back</a>
+
+</div>
+
+</body>
+</html>
