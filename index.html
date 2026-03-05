@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Faculty Substitution System</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Faculty Substitution System</h1>
+
+<form action="/substitute" method="post">
+
+<label>Absent Faculty</label>
+
+<select name="faculty">
+{% for f in faculty %}
+<option>{{f}}</option>
+{% endfor %}
+</select>
+
+<label>Day</label>
+
+<select name="day">
+{% for d in days %}
+<option>{{d}}</option>
+{% endfor %}
+</select>
+
+<label>Period</label>
+
+<input type="number" name="period" required>
+
+<button type="submit">Find Substitute</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
